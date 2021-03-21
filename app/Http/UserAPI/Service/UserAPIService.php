@@ -19,6 +19,7 @@ class UserAPIService implements UserAPIServiceIface
 
     public function list(int $page)
     {
+
         $response = Http::get(env('API_ENDPOINT'), [
             'page' => $page,
         ]);

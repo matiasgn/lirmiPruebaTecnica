@@ -16,19 +16,19 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //User
+        //user.php
         $this->app->bind(
             'App\Http\User\Interfaces\UserRepositoryIface',
             'App\Http\User\Repositories\UserRepository');
 
         $this->app->bind(
             'App\Http\User\Interfaces\UserServiceIface',
-            'App\Http\User\Repositories\UserService');
+            'App\Http\User\Service\UserService');
 
         //userAPI
         $this->app->bind(
             'App\Http\UserAPI\Interfaces\UserAPIServiceIface',
-            'App\Http\UserAPI\Repositories\UserAPIService');
+            'App\Http\UserAPI\Service\UserAPIService');
 
 
     }

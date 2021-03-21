@@ -39,7 +39,8 @@ class UserService implements UserServiceIface
 
     public function listAPI(int $page)
     {
-       return $this->serviceUserAPI->listAPI($page);
+
+       return $this->serviceUserAPI->list($page);
     }
 
     public function findAPI(int $id)

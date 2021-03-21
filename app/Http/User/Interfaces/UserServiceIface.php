@@ -12,4 +12,8 @@ interface UserServiceIface
 
     public function delete(int $id);
 
+    public function listAPI(int $page);
+
+    public function findAPI(int $id);
+
 }
