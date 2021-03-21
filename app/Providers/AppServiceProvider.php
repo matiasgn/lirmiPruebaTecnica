@@ -3,9 +3,12 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use GuzzleHttp\Client;
 
 class AppServiceProvider extends ServiceProvider
 {
+
+
     /**
      * Register any application services.
      *
@@ -17,6 +20,17 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(
             'App\Http\User\Interfaces\UserRepositoryIface',
             'App\Http\User\Repositories\UserRepository');
+
+        $this->app->bind(
+            'App\Http\User\Interfaces\UserServiceIface',
+            'App\Http\User\Repositories\UserService');
+
+        //userAPI
+        $this->app->bind(
+            'App\Http\UserAPI\Interfaces\UserAPIServiceIface',
+            'App\Http\UserAPI\Repositories\UserAPIService');
+
+
     }
 
     /**
