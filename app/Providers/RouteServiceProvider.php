@@ -15,6 +15,7 @@ class RouteServiceProvider extends ServiceProvider
      * @var string
      */
     protected $namespace = 'App\Http\Controllers';
+    protected $userNamespace = 'App\Http\User\Controllers';
 
     /**
      * The path to the "home" route for your application.
@@ -46,6 +47,8 @@ class RouteServiceProvider extends ServiceProvider
 
         $this->mapWebRoutes();
 
+        $this->mapUserRoutes();
+
         //
     }
 
@@ -61,6 +64,13 @@ class RouteServiceProvider extends ServiceProvider
         Route::middleware('web')
             ->namespace($this->namespace)
             ->group(base_path('routes/web.php'));
+    }
+
+    protected function mapUserRoutes()
+    {
+        Route::middleware('web')
+            ->namespace($this->userNamespace)
+            ->group(base_path('routes/user.php'));
     }
 
     /**
