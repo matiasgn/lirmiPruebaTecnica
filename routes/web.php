@@ -13,6 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/usuarios', function () {
+    return view('user');
 });
+
+
+Route::get('/', function () {
+    return view('user');
+});
+
+Route::get('/usuariosGuardados', function () {
+    return view('userSaved');
+});
+

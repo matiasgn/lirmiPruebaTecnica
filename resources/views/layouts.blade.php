@@ -3,17 +3,15 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="api-base-url" content="{{env('APP_URL')}}" />
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="icon" href="{{ asset('img/favicons.png') }}" type="image/png"/>
     <title>Usuarios</title>
     <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
 </head>
-<div id="app">
-</div>
+
 <body>
 <div>
     <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
@@ -25,25 +23,24 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav">
-                        <li class="nav-item  {{ (request()->is('document')) ? 'active' : '' }}">
-                            <a class="nav-link" href="/document"><i class="nav-icon far fa-folder-open"></i>&nbsp;Documentos</a>
+                    <li class="nav-item  {{ (request()->is('usuarios')) ? 'active' : '' }}">
+                            <a class="nav-link" href="/usuarios"><i class="nav-icon far fa-folder-open"></i>&nbsp;Usuarios</a>
                         </li>
-                        <li class="nav-item  {{ (request()->is('request/add')) ? 'active' : '' }}">
-                            <a class="nav-link" href="/request/add"><i class="fas fa-link"></i>&nbsp; Solicitar
-                                Vinculación</a>
+                        <li class="nav-item  {{ (request()->is('usuariosGuardados')) ? 'active' : '' }}">
+                            <a class="nav-link" href="/usuariosGuardados"><i class="fas fa-link"></i>&nbsp; Usuarios Guardados</a>
                         </li>
                     </ul>
             </div>
         </div>
     </nav>
-    <main class="py-4">
-        @yield('content')
-    </main>
+    <div id='app'>
+        <main class="py-4">
+            @yield('content')
+        </main>
+    </div>
 </div>
 </body>
-
-<script src="{{asset('js/loading.js')}}" type="text/javascript"></script>
-
+<script src="{{asset('js/app.js')}}" type="text/javascript"></script>
 </html>
 
 
