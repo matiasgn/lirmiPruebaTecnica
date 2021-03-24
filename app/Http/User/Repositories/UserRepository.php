@@ -26,13 +26,13 @@ class UserRepository implements UserRepositoryIface
 
     public function list()
     {
-         return $this->entity::get();
+        return $this->entity::get();
     }
-
 
     public function delete(int $id)
     {
-        $user=User::find($id);
+
+        $user=$this->entity::find($id);
         return $user->delete();
     }
 

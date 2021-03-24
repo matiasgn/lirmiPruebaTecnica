@@ -34,6 +34,7 @@ class UserController extends Controller
 
     public function findAPI(Request $request)
     {
+
         $request->validate([
             'id' => 'required|integer|between:1,14'
         ]);
@@ -52,4 +53,15 @@ class UserController extends Controller
 
         return $this->service->store($request->input());
     }
+
+    public function delete(Request $request)
+    {
+        $request->validate([
+            'id' => 'required'
+        ]);
+
+        return $this->service->delete($request->id);
+    }
+
+
 }
